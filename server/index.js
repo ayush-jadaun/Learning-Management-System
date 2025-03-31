@@ -7,6 +7,7 @@ import mongoSanitize from "express-mongo-sanitize";
 import hpp from "hpp"
 import cookieParser from "cookie-parser";
 import cors from "cors"
+import healthCheckRoutes from "./routes/health.routes.js"
 dotenv.config();
 
 const app = express();
@@ -58,7 +59,7 @@ app.use(cors({
 
 
 // API Routes (Define routes here)
-// Example: app.use("/api/v1/users", userRoutes);
+app.use("/health",healthCheckRoutes)
 
 // Global Error Handler
 app.use((err, req, res, next) => {
