@@ -105,5 +105,5 @@ class DatabaseConnection {
 
 const dbConnection = new DatabaseConnection();
 
-export default dbConnection.connect.bind(dbConnection); // ✅ Fix: Export connect function
+export default dbConnection.connect.bind(dbConnection);
 export const getDBStatus = dbConnection.getConnectionStatus.bind(dbConnection);
