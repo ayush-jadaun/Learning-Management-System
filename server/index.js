@@ -8,6 +8,7 @@ import hpp from "hpp"
 import cookieParser from "cookie-parser";
 import cors from "cors"
 import healthCheckRoutes from "./routes/health.routes.js"
+import userRoutes from "./routes/user.routes.js"
 dotenv.config();
 
 const app = express();
@@ -60,6 +61,17 @@ app.use(cors({
 
 // API Routes (Define routes here)
 app.use("/health",healthCheckRoutes)
+app.use("/api/v1/user",userRoutes)
+
+
+
+
+
+
+
+
+
+
 
 // Global Error Handler
 app.use((err, req, res, next) => {
